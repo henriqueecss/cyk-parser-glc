@@ -1,66 +1,90 @@
-Este projeto implementa o Algoritmo CYK para verificar se uma Gramática Livre de Contexto (GLC) em Forma Normal de Chomsky (FNC) pode derivar uma palavra de entrada. O aplicativo processa a gramática e a palavra fornecidas através de arquivos e retorna uma tabela triangular CYK em um arquivo de saída.
+# 🧠 Algoritmo CYK — Gramáticas Livres de Contexto
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+Implementação do **algoritmo CYK (Cocke–Younger–Kasami)** em C++, utilizada para verificar se uma palavra pertence à linguagem gerada por uma **Gramática Livre de Contexto (GLC)** na **Forma Normal de Chomsky (FNC)**.
+
+Projeto desenvolvido com fins **acadêmicos**, voltado para a disciplina de **Linguagens Formais e Autômatos**.
+
+---
+
+## 🚀 Funcionalidades
+
+- Leitura de gramática livre de contexto a partir de arquivo `.txt`
+- Execução do algoritmo CYK
+- Geração da tabela CYK completa
+- Saída formatada em arquivo de texto
+- Implementação em C++ moderno (C++17)
+
+---
+
+## 📁 Estrutura do Projeto
+
+.
+├── cyk.cpp # Código-fonte principal
+├── glc.txt # Arquivo de gramática de exemplo
+└── README.md # Documentação do projeto
 
 
-Requisitos
+---
 
-1. Instale um compilador C++
-O projeto foi desenvolvido e testado com o compilador g++.
-Verifique se o g++ está instalado em seu sistema. No terminal:
-"g++ --version"
+## 📄 Formato da Gramática
 
-2. Sistema Operacional
-Compatível com sistemas Unix/Linux e Windows.
+A gramática deve estar na **Forma Normal de Chomsky** e seguir o padrão:
 
-3. Estrutura do Projeto
-Os arquivos do projeto devem seguir a seguinte estrutura:
-cyk.cpp: Arquivo com o código-fonte em C++.
-glc.txt: Arquivo de texto definindo a gramática em FNC.
-saida.txt: Arquivo gerado pelo programa para armazenar a matriz triangular do algoritmo CYK.
+S -> AB | BC
+A -> BA | a
+B -> CC | b
+C -> AB | a
 
 
-Instruções de Uso
+### Observações:
+- Produções separadas por `|`
+- Terminais representados por símbolos simples (`a`, `b`)
+- Espaços obrigatórios ao redor do `->`
 
-1. Configurar a Gramática (Arquivo glc.txt)
-Crie um arquivo glc.txt contendo a gramática em conformidade com o seguinte formato:
-Variáveis: Representadas por letras maiúsculas "[A-Z]". A variável inicial deve ser "S".
-Terminais: Representados por letras minúsculas "[a-z]".
-Definições das Regras: "->" como operador de definição e "|" como separador de produções.
-Lambda (produção vazia): Representado pelo símbolo ".".
+---
 
-Exemplo de Gramática em FNC (arquivo glc.txt):
-S -> AT | AB
-T -> XB
-X -> AT | AB
-A -> a
-B -> b
+## ▶️ Como Compilar
 
-2. Compilação do Código
-Compile o programa usando o g++ no terminal ou no prompt de comando:
-"g++ -o ex cyk.cpp"
-Esse comando criará um executável chamado "ex".
+No terminal, execute:
 
-3. Execução do Programa
-Execute o programa a partir do terminal com o seguinte formato:
-"./ex glc.txt <palavra> saida.txt"
-Exemplo de Execução:
-"./ex glc.txt aaabbb saida.txt"
-glc.txt: Arquivo contendo a gramática.
-aaabbb: Palavra que será verificada.
-saida.txt: Nome do arquivo para o qual será salva a tabela CYK.
+```bash
+g++ -std=c++17 cyk.cpp -o cyk
+```
 
-4. Verificar o Arquivo de Saída
-Após a execução, o resultado do algoritmo CYK será salvo no arquivo especificado (saida.txt), contendo a tabela triangular CYK.
-Formato do Arquivo de Saída (Exemplo para aaabbb):
-{S,X}
-{} {T}
-{} {S,X} {}
-{} {} {T} {}
-{} {} {S,X} {} {}
-{A} {A} {A} {B} {B} {B}
-a a a b b b 
+## ▶️ Como Executar
+```bash
+./cyk glc.txt palavra saida.txt
+```
+Exemplo:
+```bash
+./cyk glc.txt baaba resultado.txt
+```
 
-Interpretação:
+## 📤 Saída
+- A tabela CYK é escrita no arquivo informado
 
-Cada linha da saída indica as variáveis que podem derivar as subsequências daquela camada da tabela CYK.
-A última linha mostra os caracteres da palavra de entrada.
-A célula do topo (mais alta da tabela) mostra se a variável inicial (S) foi capaz de derivar a palavra.
+- A última linha contém a palavra analisada
+
+- Cada célula apresenta o conjunto de variáveis que derivam aquela substring
+
+## 🛠 Tecnologias Utilizadas
+- C++
+
+- STL (map, set, vector, string)
+
+- Compilador g++
+
+## 🎓 Contexto Acadêmico
+Projeto desenvolvido como exercício prático para reforçar conceitos de:
+
+- Gramáticas Livres de Contexto
+
+- Forma Normal de Chomsky
+
+- Algoritmos de reconhecimento de linguagens formais
+
+## 👨‍💻 Autor
+Henrique Soares
+Graduando em Ciência da Computação — UFLA
+GitHub: https://github.com/henriqueecss
