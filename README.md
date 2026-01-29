@@ -30,12 +30,12 @@ Projeto desenvolvido com fins **acadêmicos**, voltado para a disciplina de **Li
 ## 📄 Formato da Gramática
 
 A gramática deve estar na **Forma Normal de Chomsky** e seguir o padrão:
-
+``` text
 S -> AB | BC
 A -> BA | a
 B -> CC | b
 C -> AB | a
-
+```
 
 ### Observações:
 - Produções separadas por `|`
