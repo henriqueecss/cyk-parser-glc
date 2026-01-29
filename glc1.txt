@@ -1,0 +1,11 @@
+S -> a|VW|VY
+A -> a|VA
+B -> TX|TU
+C -> UC|c
+T -> b
+V -> a 
+U -> c 
+Y -> AZ 
+Z -> BC 
+W -> BC 
+X -> UB
