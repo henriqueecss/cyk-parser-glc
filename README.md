@@ -18,12 +18,12 @@ Projeto desenvolvido com fins **acadêmicos**, voltado para a disciplina de **Li
 ---
 
 ## 📁 Estrutura do Projeto
-
+``` text
 .
 ├── cyk.cpp # Código-fonte principal
 ├── glc.txt # Arquivo de gramática de exemplo
 └── README.md # Documentação do projeto
-
+```
 
 ---
 
